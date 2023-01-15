@@ -28,7 +28,7 @@
         <div class="form__container">
           <!-- TODO: add content -->
           <!-- First Form -->
-          <div class="form">
+          <div class="form hidden">
             <!-- form header -->
             <div class="form__header">
               <h2 class="form__text--title">Personal Info</h2>
@@ -73,10 +73,82 @@
               </label>
             </div>
           </div>
+
+          <div class="form">
+            <!-- form header -->
+            <div class="form__header">
+              <h2 class="form__text--title">Select your plan</h2>
+              <p class="form__text--subtitle">
+                You have the option of monthly or yearly billing.
+              </p>
+            </div>
+
+            <div class="form__body">
+              <!-- Arcade -->
+              <div class="plan__container plan__container--active">
+                <!-- Icon -->
+                <img
+                  class="plan__icon"
+                  src="<%= require('./assets/icon-arcade.svg') %>"
+                  alt="Arcade Icon"
+                />
+                <!-- Text -->
+                <div class="plan__text">
+                  <p class="plan__text--title">Arcade</p>
+                  <p class="plan__text--price plan__text--small">$90/yr</p>
+                  <p class="plan__text--fee plan__text--small">2 months free</p>
+                </div>
+              </div>
+
+              <!-- Advanced -->
+              <div class="plan__container">
+                <!-- Icon -->
+                <img
+                  class="plan__icon"
+                  src="<%= require('./assets/icon-advanced.svg') %>"
+                  alt="Arcade Icon"
+                />
+                <!-- Text -->
+                <div class="plan__text">
+                  <p class="plan__text--title">Advanced</p>
+                  <p class="plan__text--price">$120/yr</p>
+                  <p class="plan__text--fee">2 months free</p>
+                </div>
+              </div>
+
+              <!-- Pro -->
+              <div class="plan__container">
+                <!-- Icon -->
+                <img
+                  class="plan__icon"
+                  src="<%= require('./assets/icon-pro.svg') %>"
+                  alt="Arcade Icon"
+                />
+                <!-- Text -->
+                <div class="plan__text">
+                  <p class="plan__text--title">Pro</p>
+                  <p class="plan__text--price">$150/yr</p>
+                  <p class="plan__text--fee">2 months free</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__footer">
+              <div class="plan__bar">
+                <p>Monthly</p>
+                <!-- On and Off button here -->
+                <div class="plan__switch">
+                  <div class="plan__switch--dot"></div>
+                </div>
+                <p>Yearly</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Next Step / Back Step buttons -->
         <div class="form__navigation">
+          <p class="form__button--back">Go back</p>
           <div class="form__button">Next Step</div>
         </div>
       </div>
