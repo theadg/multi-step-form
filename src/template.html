@@ -74,7 +74,8 @@
             </div>
           </div>
 
-          <div class="form">
+          <!-- Second Form -->
+          <div class="form hidden">
             <!-- form header -->
             <div class="form__header">
               <h2 class="form__text--title">Select your plan</h2>
@@ -141,6 +142,118 @@
                   <div class="plan__switch--dot"></div>
                 </div>
                 <p>Yearly</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Third Form -->
+          <div class="form hidden">
+            <!-- form header -->
+            <div class="form__header">
+              <h2 class="form__text--title">Pick add-ons</h2>
+              <p class="form__text--subtitle">
+                Add-ons help enhance your gaming experience
+              </p>
+            </div>
+
+            <div class="form__body">
+              <!-- Online Service -->
+              <div class="addon__container addon__container--active">
+                <input
+                  class="addon__checkbox"
+                  type="checkbox"
+                  name="checkbox"
+                  id="checkbox"
+                />
+                <div class="addon__text">
+                  <p class="addon__text--head">Online service</p>
+                  <p class="addon__text--sub">Access to multiplayer games</p>
+                </div>
+
+                <p class="addon__text--price">+$1/mo</p>
+              </div>
+
+              <!-- Larger Storage -->
+              <div class="addon__container addon__container--active">
+                <input
+                  class="addon__checkbox"
+                  type="checkbox"
+                  name="checkbox"
+                  id="checkbox"
+                />
+                <div class="addon__text">
+                  <p class="addon__text--head">Larger Storage</p>
+                  <p class="addon__text--sub">Extra 1TVB of cloud save</p>
+                </div>
+
+                <p class="addon__text--price">+$2/mo</p>
+              </div>
+
+              <!-- Customizable Profile -->
+              <div class="addon__container">
+                <input
+                  class="addon__checkbox"
+                  type="checkbox"
+                  name="checkbox"
+                  id="checkbox"
+                />
+                <div class="addon__text">
+                  <p class="addon__text--head">Customizable Profile</p>
+                  <p class="addon__text--sub">Custom theme on your profile</p>
+                </div>
+
+                <p class="addon__text--price">+$1/mo</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fourth Form -->
+          <div class="form">
+            <!-- form header -->
+            <div class="form__header">
+              <h2 class="form__text--title">Finishing Up</h2>
+              <p class="form__text--subtitle">
+                Double-check everything looks OK before confirming.
+              </p>
+            </div>
+
+            <div class="form__body">
+              <!-- Primary -->
+              <div class="result__container">
+                <div class="result__container--sub">
+                  <div class="result__text">
+                    <p class="result__text--plan">Arcade (Monthly)</p>
+                    <button class="result__text--change">Change</button>
+                  </div>
+
+                  <p class="result__price">$9/mo</p>
+                </div>
+                <hr />
+                <div class="result__container--sub">
+                  <div class="result__text">
+                    <p class="result__text--addon">Online service</p>
+                  </div>
+
+                  <p class="result__price result__price--sub">+$1/mo</p>
+                </div>
+
+                <div class="result__container--sub">
+                  <div class="result__text">
+                    <p class="result__text--addon">Larger storage</p>
+                  </div>
+
+                  <p class="result__price result__price--sub">+$2/mo</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="result__footer">
+              <div class="result__container--sub">
+                <div class="result__text">
+                  <p class="result__text--total">Total (per month)</p>
+                </div>
+
+                <p class="result__price--final">+$12/mo</p>
               </div>
             </div>
           </div>
