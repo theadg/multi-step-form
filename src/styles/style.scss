@@ -76,7 +76,7 @@
   }
 
   &__container {
-    min-height: 500px;
+    // min-height: 500px;
     height: fit-content;
     width: 90%;
     background-color: white;
@@ -232,5 +232,96 @@
       background-color: white;
       border-radius: 16px;
     }
+  }
+}
+
+.addon {
+  &__container {
+    height: 60px;
+    display: grid;
+    padding: 16px;
+    gap: 16px;
+
+    grid-auto-flow: column;
+    align-items: center;
+
+    border: 1px solid $color-neutral-gray-light;
+    border-radius: 8px;
+
+    &--active {
+      border-color: $color-primary-blue-purple;
+      background-color: rgb(248, 249, 254);
+    }
+  }
+
+  &__checkbox {
+    height: 18px;
+    width: 18px;
+
+    &:checked {
+      accent-color: $color-primary-blue-purple;
+    }
+  }
+  &__text {
+    &--head {
+      color: $color-primary-blue-marine;
+    }
+
+    &--sub {
+      font-size: 12px;
+      color: $color-neutral-gray-cool;
+    }
+
+    &--price {
+      color: $color-primary-blue-purple;
+      font-size: 14px;
+    }
+  }
+}
+
+.result {
+  &__container {
+    display: grid;
+    background-color: rgb(248, 249, 254);
+    border-radius: 8px;
+    padding: 36px 20px;
+    gap: 16px;
+    &--sub {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__text {
+    &--change {
+      border: none;
+      background: none;
+      appearance: none;
+      text-decoration: underline;
+      color: $color-neutral-gray-cool;
+    }
+
+    &--addon,
+    &--total {
+      color: $color-neutral-gray-cool;
+      font-weight: $font-weight-regular;
+    }
+  }
+
+  &__price {
+    font-weight: $font-weight-bold;
+    color: $color-primary-blue-marine;
+    font-size: 14px;
+
+    &--sub {
+      font-weight: $font-weight-regular;
+    }
+
+    &--final {
+      color: $color-primary-blue-purple;
+    }
+  }
+  &__footer {
+    padding: 0 20px;
   }
 }
