@@ -1,0 +1,107 @@
+@import './vars.scss';
+
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+// Mobile first Development
+
+.container {
+  background-color: $color-neutral-alabaster;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 87px 0.5fr repeat(3, 1fr);
+
+  &__image {
+    background-image: url('../assets/bg-sidebar-mobile.svg');
+    background-position: center;
+    background-size: cover;
+    height: 175px;
+  }
+
+  &__content {
+    // height: 375px;
+    // width: 375px;
+    height: 100%;
+    width: 100%;
+    // border: 1px solid red;
+
+    display: grid;
+    grid-row: 2 / 6;
+    justify-items: center;
+  }
+}
+
+.form {
+  &__step {
+    // padding: 6px 10px;
+    height: 30px;
+    width: 30px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $color-white;
+    color: $color-white;
+    border-radius: 50%;
+    font-weight: $font-weight-bold;
+    font-size: 14px;
+
+    &--container {
+      display: flex;
+      gap: 16px;
+
+      margin: 0 auto;
+      padding-top: 30px;
+      width: min-content;
+    }
+
+    &--active {
+      color: $color-primary-blue-marine;
+      background-color: $color-primary-blue-light;
+      border-color: $color-primary-blue-light;
+    }
+  }
+
+  &__container {
+    height: 500px;
+    width: 90%;
+    background-color: white;
+
+    // TODO: add bordershadow
+    border-radius: 16px;
+
+    grid-row: 1 / 5;
+  }
+
+  &__navigation {
+    // background-color: red;
+    height: 70px;
+    width: 100%;
+    @include flexCenter();
+    justify-content: flex-end;
+    padding: 16px;
+
+    grid-row: 5;
+
+    margin-top: auto;
+  }
+
+  &__button {
+    background-color: $color-primary-blue-marine;
+    color: $color-primary-blue-light;
+    font-weight: $font-weight-regular;
+    height: min-content;
+    padding: 12px;
+    border-radius: 6px;
+  }
+}
