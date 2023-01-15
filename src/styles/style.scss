@@ -43,6 +43,9 @@
 }
 
 .form {
+  padding: 35px 25px;
+  display: grid;
+  gap: 26px;
   &__step {
     // padding: 6px 10px;
     height: 30px;
@@ -73,11 +76,16 @@
   }
 
   &__container {
-    height: 500px;
+    min-height: 500px;
+    height: fit-content;
     width: 90%;
     background-color: white;
 
-    // TODO: add bordershadow
+    // TODO: fix  box shadow
+    // temp box shadow
+    box-shadow: -11px 27px 61px -18px rgba(255, 248, 248, 0.56);
+    -webkit-box-shadow: -11px 27px 61px -18px rgba(0, 0, 0, 0.56);
+    -moz-box-shadow: -11px 27px 61px -18px rgba(0, 0, 0, 0.56);
     border-radius: 16px;
 
     grid-row: 1 / 5;
@@ -85,6 +93,7 @@
 
   &__navigation {
     // background-color: red;
+    background-color: $color-white;
     height: 70px;
     width: 100%;
     @include flexCenter();
@@ -103,5 +112,125 @@
     height: min-content;
     padding: 12px;
     border-radius: 6px;
+
+    &--back {
+      margin-right: auto;
+      color: $color-neutral-gray-cool;
+    }
+  }
+
+  &__text {
+    &--title {
+      color: $color-primary-blue-marine;
+    }
+
+    &--subtitle {
+      color: $color-neutral-gray-cool;
+      font-weight: $font-weight-regular;
+      font-size: calc($font-size + 2px);
+    }
+  }
+
+  &__header {
+    display: grid;
+    gap: 16px;
+  }
+  &__body {
+    display: grid;
+    gap: 16px;
+  }
+
+  &__input {
+    font-family: $font-family;
+    padding: 16px;
+    appearance: none;
+    border: none;
+    outline: none;
+    border: 1px solid $color-neutral-gray-light;
+    border-radius: 4px;
+    font-weight: $font-weight-medium;
+    font-size: $font-size;
+
+    &--row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    &--label {
+      color: $color-primary-blue-marine;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.plan {
+  &__container {
+    display: flex;
+    padding: 16px;
+    gap: 16px;
+
+    border: 1px solid $color-neutral-gray-light;
+    border-radius: 8px;
+
+    &--active {
+      border-color: $color-primary-blue-purple;
+      background-color: rgb(248, 249, 254);
+    }
+  }
+
+  &__icon {
+    margin-bottom: auto;
+    height: 36px;
+    width: 36px;
+  }
+
+  &__text {
+    display: grid;
+    gap: 6px;
+
+    &--small {
+      font-size: 14px;
+    }
+
+    &--title {
+      color: $color-primary-blue-marine;
+      font-weight: $font-weight-bold;
+    }
+
+    &--price {
+      color: $color-neutral-gray-cool;
+    }
+    &--fee {
+      color: $color-primary-blue-marine;
+    }
+  }
+
+  &__bar {
+    @include flexCenter();
+    gap: 22px;
+    height: 45px;
+    border-radius: 8px;
+    background-color: rgb(248, 249, 254);
+  }
+
+  &__switch {
+    width: 35px;
+    height: 20px;
+    background-color: $color-primary-blue-marine;
+    border-radius: 40px;
+    @include flexCenter();
+
+    justify-content: flex-start;
+    padding: 2px 5px;
+    &--dot {
+      height: 12px;
+      width: 12px;
+      background-color: white;
+      border-radius: 16px;
+    }
   }
 }
