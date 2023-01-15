@@ -34,7 +34,7 @@
     // width: 375px;
     height: 100%;
     width: 100%;
-    border: 1px solid red;
+    // border: 1px solid red;
 
     display: grid;
     grid-row: 2 / 6;
@@ -84,7 +84,7 @@
   }
 
   &__navigation {
-    background-color: red;
+    // background-color: red;
     height: 70px;
     width: 100%;
     @include flexCenter();
