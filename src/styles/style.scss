@@ -325,3 +325,19 @@
     padding: 0 20px;
   }
 }
+
+.final {
+  &__container {
+    padding: 65px 10px;
+    @include flexCenter();
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__text {
+    &--body {
+      text-align: center;
+      color: $color-neutral-gray-cool;
+    }
+  }
+}
