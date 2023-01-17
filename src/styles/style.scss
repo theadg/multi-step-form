@@ -231,6 +231,10 @@
       width: 12px;
       background-color: white;
       border-radius: 16px;
+
+      &--active {
+        justify-content: flex-end;
+      }
     }
   }
 }
@@ -319,6 +323,10 @@
 
     &--final {
       color: $color-primary-blue-purple;
+    }
+
+    &--gray {
+      color: $color-neutral-gray-cool;
     }
   }
   &__footer {

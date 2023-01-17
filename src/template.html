@@ -26,9 +26,9 @@
       <div class="container__content">
         <!-- Content of the Form itself -->
         <div class="form__container">
-          <!-- TODO: add content -->
+          <!-- TODO: ADD JS -->
           <!-- First Form -->
-          <div class="form hidden">
+          <div class="form">
             <!-- form header -->
             <div class="form__header">
               <h2 class="form__text--title">Personal Info</h2>
@@ -75,6 +75,7 @@
           </div>
 
           <!-- Second Form -->
+          <!-- TODO: fix plan text -->
           <div class="form hidden">
             <!-- form header -->
             <div class="form__header">
@@ -96,8 +97,10 @@
                 <!-- Text -->
                 <div class="plan__text">
                   <p class="plan__text--title">Arcade</p>
-                  <p class="plan__text--price plan__text--small">$90/yr</p>
-                  <p class="plan__text--fee plan__text--small">2 months free</p>
+                  <p class="plan__text--price" id="arcadePrice"></p>
+                  <p class="plan__text--free plan__text--small hidden">
+                    2 months free
+                  </p>
                 </div>
               </div>
 
@@ -112,8 +115,8 @@
                 <!-- Text -->
                 <div class="plan__text">
                   <p class="plan__text--title">Advanced</p>
-                  <p class="plan__text--price">$120/yr</p>
-                  <p class="plan__text--fee">2 months free</p>
+                  <p class="plan__text--price" id="advancedPrice"></p>
+                  <p class="plan__text--free hidden">2 months free</p>
                 </div>
               </div>
 
@@ -128,20 +131,20 @@
                 <!-- Text -->
                 <div class="plan__text">
                   <p class="plan__text--title">Pro</p>
-                  <p class="plan__text--price">$150/yr</p>
-                  <p class="plan__text--fee">2 months free</p>
+                  <p class="plan__text--price" id="proPrice"></p>
+                  <p class="plan__text--free hidden">2 months free</p>
                 </div>
               </div>
             </div>
 
             <div class="form__footer">
               <div class="plan__bar">
-                <p>Monthly</p>
+                <p class="result__price--gray" id="footerMonthly">Monthly</p>
                 <!-- On and Off button here -->
                 <div class="plan__switch">
                   <div class="plan__switch--dot"></div>
                 </div>
-                <p>Yearly</p>
+                <p id="footerYearly">Yearly</p>
               </div>
             </div>
           </div>
@@ -158,35 +161,37 @@
 
             <div class="form__body">
               <!-- Online Service -->
-              <div class="addon__container addon__container--active">
+              <div class="addon__container">
                 <input
                   class="addon__checkbox"
                   type="checkbox"
                   name="checkbox"
                   id="checkbox"
+                  checked
                 />
                 <div class="addon__text">
                   <p class="addon__text--head">Online service</p>
                   <p class="addon__text--sub">Access to multiplayer games</p>
                 </div>
 
-                <p class="addon__text--price">+$1/mo</p>
+                <p class="addon__text--price" id="priceOnline"></p>
               </div>
 
               <!-- Larger Storage -->
-              <div class="addon__container addon__container--active">
+              <div class="addon__container">
                 <input
                   class="addon__checkbox"
                   type="checkbox"
                   name="checkbox"
                   id="checkbox"
+                  checked
                 />
                 <div class="addon__text">
                   <p class="addon__text--head">Larger Storage</p>
                   <p class="addon__text--sub">Extra 1TVB of cloud save</p>
                 </div>
 
-                <p class="addon__text--price">+$2/mo</p>
+                <p class="addon__text--price" id="priceStorage"></p>
               </div>
 
               <!-- Customizable Profile -->
@@ -202,7 +207,7 @@
                   <p class="addon__text--sub">Custom theme on your profile</p>
                 </div>
 
-                <p class="addon__text--price">+$1/mo</p>
+                <p class="addon__text--price" id="priceProfile"></p>
               </div>
             </div>
           </div>
@@ -222,14 +227,15 @@
               <div class="result__container">
                 <div class="result__container--sub">
                   <div class="result__text">
-                    <p class="result__text--plan">Arcade (Monthly)</p>
+                    <p class="result__text--plan" id="resultPlan"></p>
                     <button class="result__text--change">Change</button>
                   </div>
 
-                  <p class="result__price">$9/mo</p>
+                  <p class="result__price" id="resultPrice">$9/mo</p>
                 </div>
                 <hr />
-                <div class="result__container--sub">
+                <div class="result__container--main"></div>
+                <!-- <div class="result__container--sub">
                   <div class="result__text">
                     <p class="result__text--addon">Online service</p>
                   </div>
@@ -244,6 +250,14 @@
 
                   <p class="result__price result__price--sub">+$2/mo</p>
                 </div>
+
+                <div class="result__container--sub">
+                  <div class="result__text">
+                    <p class="result__text--addon">Customizable Profile</p>
+                  </div>
+
+                  <p class="result__price result__price--sub">+$2/mo</p>
+                </div> -->
               </div>
             </div>
 
@@ -253,13 +267,13 @@
                   <p class="result__text--total">Total (per month)</p>
                 </div>
 
-                <p class="result__price--final">+$12/mo</p>
+                <p class="result__price--final" id="priceTotal">+$12/mo</p>
               </div>
             </div>
           </div>
 
           <!-- Fifth Form -->
-          <div class="form">
+          <div class="form hidden">
             <div class="form__body">
               <div class="final__container">
                 <img
@@ -281,7 +295,7 @@
         <!-- Next Step / Back Step buttons -->
         <div class="form__navigation">
           <p class="form__button--back">Go back</p>
-          <div class="form__button">Next Step</div>
+          <div class="form__button form__button--next">Next Step</div>
         </div>
       </div>
     </div>
