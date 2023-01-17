@@ -62,8 +62,10 @@ const getCurrentPlan = () => {
 };
 
 const setTotalText = () => {
-  resultTotal.textContent = `+${total}/${resultPrice.substring(
-    resultPrice.length - 2
+  console.log('SET TOTAL TEXT: ', total);
+  console.log(resultTotal);
+  resultTotal.textContent = `+${total}/${resultPrice.textContent.substring(
+    resultPrice.textContent.length - 2
   )}`;
 };
 
@@ -129,7 +131,19 @@ const createCheckoutRow = (title, price) => {
   return resultContainer;
 };
 
+const removeResultRow = (title) => {
+  let { children } = mainResultContainer;
+
+  children = Array.from(children);
+  children.forEach((child) => {
+    if (child.firstElementChild.textContent === title) {
+      child.remove();
+    }
+  });
+};
+
 const setActiveAddOns = () => {
+  getPlanPrice();
   addOns.forEach((element, index) => {
     // console.log(element.firstElementChild);
     const checkbox = element.firstElementChild;
@@ -140,7 +154,8 @@ const setActiveAddOns = () => {
       element.classList.toggle('addon__container--active');
       // remove everything if it is unchcked
       if (!checkbox.checked) {
-        mainResultContainer.removeChild(mainResultContainer.children[index]);
+        // remove child
+        removeResultRow(title);
         switch (currentPlan) {
           case 'Monthly':
             total -= parseInt(price.substring(3, 2), 10);
@@ -149,8 +164,9 @@ const setActiveAddOns = () => {
             total -= parseInt(price.substring(3, 3), 10);
             break;
         }
+        console.log('ELEMENT PRICE', price);
         console.log('SUB', total);
-        setTotalText();
+        // setTotalText();
       } else {
         element.classList.add('addon__container--active');
         mainResultContainer.append(createCheckoutRow(title, price));
@@ -165,14 +181,15 @@ const setActiveAddOns = () => {
         }
 
         console.log('ADD', total);
-        setTotalText();
+        console.log(price);
       }
+
+      setTotalText();
     };
 
     if (checkbox.checked) {
       element.classList.add('addon__container--active');
       mainResultContainer.append(createCheckoutRow(title, price));
-      getPlanPrice();
       switch (currentPlan) {
         case 'Monthly':
           total += parseInt(price.substring(3, 2), 10);
@@ -182,7 +199,8 @@ const setActiveAddOns = () => {
           break;
       }
 
-      console.log(total);
+      console.log('TOTAL IN CHECKED', total);
+      setTotalText();
     }
   });
 };
@@ -222,4 +240,5 @@ plans.forEach((element) => {
   };
 });
 // TODO: Work on Total
-// TODO: debug on total (30 mins probably)
+
+removeResultRow();
