@@ -349,3 +349,75 @@
     }
   }
 }
+
+@media screen and (min-width: 1080px) {
+  // container size 940 * 600
+
+  body {
+    height: 100vh;
+    width: 100vw;
+    @include flexCenter();
+    background-color: $color-neutral-alabaster;
+  }
+  .container {
+    width: 940px;
+    height: 600px;
+    display: flex;
+
+    background-color: white;
+    // border: 1px solid red;
+    border-radius: 8px;
+    padding: 16px;
+    &__image {
+      min-width: 275px;
+      height: 570px;
+      background-image: url('../assets/bg-sidebar-desktop.svg');
+      border-radius: 8px;
+    }
+  }
+
+  .form {
+    &__step {
+      height: 35px;
+      width: 35px;
+      &--container {
+        flex-direction: column;
+        // TODO: add sub steps
+        gap: 32px;
+
+        &--row {
+          width: max-content;
+        }
+      }
+
+      &--main--container {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 0.5fr 0.25fr;
+      }
+
+      &--row {
+        height: 35px;
+      }
+      &--title {
+        color: $color-neutral-gray-light;
+      }
+
+      &--desc {
+        color: $color-white;
+        font-weight: $font-weight-bold;
+      }
+    }
+
+    &__container {
+      box-shadow: none;
+    }
+  }
+  // image 275*570
+}
+
+// TODO: resize the container
+//        - add step names
+//
+
+// TODO: add desktop view
