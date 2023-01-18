@@ -6,6 +6,10 @@
   justify-content: center;
 }
 
+@mixin hoverEffect() {
+  border-color: $color-primary-blue-purple;
+  cursor: pointer;
+}
 * {
   margin: 0;
   padding: 0;
@@ -180,6 +184,10 @@
       border-color: $color-primary-blue-purple;
       background-color: rgb(248, 249, 254);
     }
+
+    &:hover {
+      @include hoverEffect();
+    }
   }
 
   &__icon {
@@ -256,6 +264,10 @@
       border-color: $color-primary-blue-purple;
       background-color: rgb(248, 249, 254);
     }
+
+    &:hover {
+      @include hoverEffect();
+    }
   }
 
   &__checkbox {
@@ -303,6 +315,11 @@
       appearance: none;
       text-decoration: underline;
       color: $color-neutral-gray-cool;
+
+      &:hover {
+        color: $color-primary-blue-purple;
+        cursor: pointer;
+      }
     }
 
     &--addon,
@@ -374,6 +391,10 @@
       background-image: url('../assets/bg-sidebar-desktop.svg');
       border-radius: 8px;
     }
+
+    &__content {
+      padding: 0 40px;
+    }
   }
 
   .form {
@@ -412,12 +433,69 @@
     &__container {
       box-shadow: none;
     }
+
+    &__body {
+      &--column {
+        grid-auto-flow: column;
+      }
+    }
+
+    &__navigation {
+      padding: 0 50px;
+    }
   }
   // image 275*570
+
+  // 160*140
+  .plan {
+    &__container {
+      height: 160px;
+      width: 140px;
+
+      flex-direction: column;
+    }
+
+    &__icon {
+      height: 38px;
+      width: 38px;
+    }
+  }
+
+  .addon {
+    &__container {
+      padding: 24px;
+      height: auto;
+
+      grid-auto-columns: 0.01fr 0.85fr 0.15fr;
+    }
+
+    &__checkbox {
+      height: 21px;
+      width: 21px;
+      border-radius: 8px;
+    }
+
+    &__text {
+      &--head {
+        font-size: 18px;
+      }
+      &--sub,
+      &--price {
+        font-size: $font-size;
+      }
+    }
+  }
+
+  .result {
+    &__price {
+      &--final {
+        font-size: 18px;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
 }
 
-// TODO: resize the container
-//        - add step names
-//
-
 // TODO: complete desktop interactions
+
+// TODO: Add micro-interactions (hover etc);
