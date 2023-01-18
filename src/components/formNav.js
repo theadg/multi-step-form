@@ -3,6 +3,8 @@ const formSteps = Array.from(document.querySelectorAll('.form__step'));
 const goBackBtn = document.querySelector('.form__button--back');
 const nextStepBtn = document.querySelector('.form__button--next');
 const bottomNav = document.querySelector('.form__navigation');
+const resultChange = document.querySelector('.result__text--change');
+
 let currentForm = 0;
 let currentStep = 0;
 
@@ -85,4 +87,12 @@ nextStepBtn.onclick = () => {
 goBackBtn.onclick = () => {
   showLastForm();
   changeCurrentStepBackward();
+};
+
+resultChange.onclick = () => {
+  currentForm = 0;
+  currentStep = 1;
+  removeActiveSteps();
+  formSteps[1].classList.add('form__step--active');
+  showCurrentForm();
 };
