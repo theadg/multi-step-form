@@ -453,7 +453,15 @@
     }
 
     &__navigation {
-      padding: 0 50px;
+      padding: 0 55px;
+    }
+
+    &__button {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      width: 125px;
+      height: 50px;
     }
   }
 
@@ -502,6 +510,11 @@
         font-size: 18px;
         font-weight: $font-weight-bold;
       }
+    }
+
+    &__container--main {
+      display: grid;
+      gap: 23px;
     }
   }
 
