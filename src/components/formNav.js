@@ -37,8 +37,7 @@ const removeActiveSteps = () => {
 };
 
 const showCurrentForm = () => {
-  if (currentForm === forms.length - 1) {
-  } else {
+  if (currentForm !== forms.length - 1) {
     showHideButton();
     hideForms();
     currentForm += 1;
@@ -48,8 +47,7 @@ const showCurrentForm = () => {
 };
 
 const changeCurrentStepFoward = () => {
-  if (currentStep === forms.length - 2) {
-  } else {
+  if (currentStep !== forms.length - 2) {
     showHideButton();
     removeActiveSteps();
     currentStep += 1;
@@ -58,8 +56,7 @@ const changeCurrentStepFoward = () => {
 };
 
 const changeCurrentStepBackward = () => {
-  if (currentStep === -1) {
-  } else {
+  if (currentStep !== -1) {
     showHideButton();
     removeActiveSteps();
     currentStep -= 1;
@@ -68,8 +65,7 @@ const changeCurrentStepBackward = () => {
 };
 
 const showLastForm = () => {
-  if (currentForm === 0) {
-  } else {
+  if (currentForm !== 0) {
     showHideButton();
     hideForms();
     currentForm -= 1;
