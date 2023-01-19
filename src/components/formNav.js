@@ -5,6 +5,10 @@ const nextStepBtn = document.querySelector('.form__button--next');
 const bottomNav = document.querySelector('.form__navigation');
 const resultChange = document.querySelector('.result__text--change');
 
+const formInputRows = Array.from(
+  document.querySelectorAll('.form__input--row')
+);
+
 let currentForm = 0;
 let currentStep = 0;
 
@@ -36,22 +40,62 @@ const removeActiveSteps = () => {
   });
 };
 
+const validateFields = () => {
+  let valid = false;
+  formInputRows.forEach((row) => {
+    const formHeader = row.firstElementChild;
+    const formError = formHeader.lastElementChild;
+    const formInput = row.lastElementChild;
+
+    if (formInput.value.length === 0) {
+      formError.classList.remove('hidden');
+      formInput.classList.add('form__input--errorBorder');
+      valid = false;
+    } else {
+      valid = true;
+    }
+  });
+
+  return valid;
+};
+
 const showCurrentForm = () => {
   if (currentForm !== forms.length - 1) {
-    showHideButton();
-    hideForms();
-    currentForm += 1;
-    removeNavigation();
-    forms[currentForm].classList.remove('hidden');
+    if (currentForm === 0) {
+      const valid = validateFields();
+      if (valid) {
+        showHideButton();
+        hideForms();
+        currentForm += 1;
+        removeNavigation();
+        forms[currentForm].classList.remove('hidden');
+      }
+    } else {
+      showHideButton();
+      hideForms();
+      currentForm += 1;
+      removeNavigation();
+      forms[currentForm].classList.remove('hidden');
+    }
   }
 };
 
-const changeCurrentStepFoward = () => {
-  if (currentStep !== forms.length - 2) {
-    showHideButton();
-    removeActiveSteps();
-    currentStep += 1;
-    formSteps[currentStep].classList.add('form__step--active');
+const changeCurrentStepForward = () => {
+  if (currentStep !== formSteps.length - 2) {
+    if (currentStep === 0) {
+      validateFields();
+      if (validateFields() === true) {
+        showHideButton();
+        removeActiveSteps();
+        currentStep += 1;
+        formSteps[currentStep].classList.add('form__step--active');
+      }
+    } else {
+      showHideButton();
+      removeActiveSteps();
+      currentStep += 1;
+      formSteps[currentStep].classList.add('form__step--active');
+    }
   }
 };
 
@@ -73,11 +117,19 @@ const showLastForm = () => {
     forms[currentForm].classList.remove('hidden');
   }
 };
+
+const updateNextStepButton = () => {
+  if (currentForm === formSteps.length - 1) {
+    nextStepBtn.textContent = 'Confirm';
+    nextStepBtn.classList.add('form__button--confirm');
+  }
+};
 showHideButton();
 
 nextStepBtn.onclick = () => {
   showCurrentForm();
-  changeCurrentStepFoward();
+  changeCurrentStepForward();
+  updateNextStepButton();
 };
 
 goBackBtn.onclick = () => {
