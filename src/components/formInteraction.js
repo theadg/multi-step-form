@@ -16,6 +16,7 @@ const resultPlan = document.querySelector('#resultPlan');
 const resultPrice = document.querySelector('#resultPrice');
 const resultTotal = document.querySelector('#priceTotal');
 const mainResultContainer = document.querySelector('.result__container--main');
+
 let currentPlan = 'Monthly';
 let currentPlanType = 'Arcade';
 let total;
@@ -64,7 +65,7 @@ const getCurrentPlan = () => {
 const setTotalText = () => {
   console.log('SET TOTAL TEXT: ', total);
   console.log(resultTotal);
-  resultTotal.textContent = `+${total}/${resultPrice.textContent.substring(
+  resultTotal.textContent = `+$${total}/${resultPrice.textContent.substring(
     resultPrice.textContent.length - 2
   )}`;
 };
@@ -144,7 +145,7 @@ const removeResultRow = (title) => {
 
 const setActiveAddOns = () => {
   getPlanPrice();
-  addOns.forEach((element, index) => {
+  addOns.forEach((element) => {
     // console.log(element.firstElementChild);
     const checkbox = element.firstElementChild;
     const price = element.lastElementChild.textContent;
@@ -239,6 +240,5 @@ plans.forEach((element) => {
     setTotalText();
   };
 });
-// TODO: Work on Total
 
 removeResultRow();

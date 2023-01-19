@@ -6,6 +6,13 @@
   justify-content: center;
 }
 
+@mixin hoverCursor() {
+  cursor: pointer;
+}
+@mixin hoverEffect() {
+  border-color: $color-primary-blue-purple;
+  @include hoverCursor();
+}
 * {
   margin: 0;
   padding: 0;
@@ -113,15 +120,24 @@
     padding: 12px;
     border-radius: 6px;
 
+    &:hover {
+      @include hoverCursor();
+    }
+
     &--back {
       margin-right: auto;
       color: $color-neutral-gray-cool;
+
+      &:hover {
+        @include hoverCursor();
+      }
     }
   }
 
   &__text {
     &--title {
       color: $color-primary-blue-marine;
+      font-size: 26px;
     }
 
     &--subtitle {
@@ -179,6 +195,10 @@
     &--active {
       border-color: $color-primary-blue-purple;
       background-color: rgb(248, 249, 254);
+    }
+
+    &:hover {
+      @include hoverEffect();
     }
   }
 
@@ -256,6 +276,10 @@
       border-color: $color-primary-blue-purple;
       background-color: rgb(248, 249, 254);
     }
+
+    &:hover {
+      @include hoverEffect();
+    }
   }
 
   &__checkbox {
@@ -303,6 +327,11 @@
       appearance: none;
       text-decoration: underline;
       color: $color-neutral-gray-cool;
+
+      &:hover {
+        color: $color-primary-blue-purple;
+        cursor: pointer;
+      }
     }
 
     &--addon,
@@ -349,3 +378,158 @@
     }
   }
 }
+
+@media screen and (min-width: 500px) {
+  body {
+    height: 100vh;
+    width: 100vw;
+    @include flexCenter();
+    background-color: $color-neutral-alabaster;
+  }
+  .container {
+    width: 940px;
+    height: 600px;
+    display: flex;
+
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px;
+    &__image {
+      min-width: 275px;
+      height: 570px;
+      background-image: url('../assets/bg-sidebar-desktop.svg');
+      border-radius: 8px;
+    }
+
+    &__content {
+      padding: 0 40px;
+    }
+  }
+
+  .form {
+    &__step {
+      height: 35px;
+      width: 35px;
+      &--container {
+        flex-direction: column;
+        padding-left: 30px;
+        gap: 32px;
+
+        &--row {
+          width: max-content;
+        }
+      }
+
+      &--main--container {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 0.5fr 0.25fr;
+        padding-top: 20px;
+      }
+
+      &--row {
+        height: 35px;
+      }
+      &--title {
+        color: $color-neutral-gray-light;
+        font-size: 12 px;
+      }
+
+      &--desc {
+        color: $color-white;
+        font-weight: $font-weight-bold;
+      }
+    }
+
+    &__container {
+      box-shadow: none;
+      height: 100% !important;
+    }
+
+    &__body {
+      &--column {
+        grid-auto-flow: column;
+      }
+    }
+
+    &__navigation {
+      padding: 0 55px;
+    }
+
+    &__button {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      width: 125px;
+      height: 50px;
+    }
+  }
+
+  .plan {
+    &__container {
+      height: 160px;
+      width: 140px;
+
+      flex-direction: column;
+    }
+
+    &__icon {
+      height: 38px;
+      width: 38px;
+    }
+  }
+
+  .addon {
+    &__container {
+      padding: 24px;
+      height: auto;
+
+      grid-auto-columns: 0.01fr 0.85fr 0.15fr;
+    }
+
+    &__checkbox {
+      height: 21px;
+      width: 21px;
+      border-radius: 8px;
+    }
+
+    &__text {
+      &--head {
+        font-size: 18px;
+      }
+      &--sub,
+      &--price {
+        font-size: $font-size;
+      }
+    }
+  }
+
+  .result {
+    &__price {
+      &--final {
+        font-size: 18px;
+        font-weight: $font-weight-bold;
+      }
+    }
+
+    &__container--main {
+      display: grid;
+      gap: 23px;
+    }
+  }
+
+  .form {
+    &__final {
+      height: 100%;
+    }
+  }
+  .final {
+    &__icon {
+      height: 80px;
+      width: 80px;
+    }
+  }
+}
+
+// TODO: create readme
+// TODO: update linkedin

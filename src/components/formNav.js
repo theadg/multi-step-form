@@ -3,6 +3,8 @@ const formSteps = Array.from(document.querySelectorAll('.form__step'));
 const goBackBtn = document.querySelector('.form__button--back');
 const nextStepBtn = document.querySelector('.form__button--next');
 const bottomNav = document.querySelector('.form__navigation');
+const resultChange = document.querySelector('.result__text--change');
+
 let currentForm = 0;
 let currentStep = 0;
 
@@ -35,8 +37,7 @@ const removeActiveSteps = () => {
 };
 
 const showCurrentForm = () => {
-  if (currentForm === forms.length - 1) {
-  } else {
+  if (currentForm !== forms.length - 1) {
     showHideButton();
     hideForms();
     currentForm += 1;
@@ -46,8 +47,7 @@ const showCurrentForm = () => {
 };
 
 const changeCurrentStepFoward = () => {
-  if (currentStep === forms.length - 2) {
-  } else {
+  if (currentStep !== forms.length - 2) {
     showHideButton();
     removeActiveSteps();
     currentStep += 1;
@@ -56,8 +56,7 @@ const changeCurrentStepFoward = () => {
 };
 
 const changeCurrentStepBackward = () => {
-  if (currentStep === -1) {
-  } else {
+  if (currentStep !== -1) {
     showHideButton();
     removeActiveSteps();
     currentStep -= 1;
@@ -66,8 +65,7 @@ const changeCurrentStepBackward = () => {
 };
 
 const showLastForm = () => {
-  if (currentForm === 0) {
-  } else {
+  if (currentForm !== 0) {
     showHideButton();
     hideForms();
     currentForm -= 1;
@@ -85,4 +83,12 @@ nextStepBtn.onclick = () => {
 goBackBtn.onclick = () => {
   showLastForm();
   changeCurrentStepBackward();
+};
+
+resultChange.onclick = () => {
+  currentForm = 0;
+  currentStep = 1;
+  removeActiveSteps();
+  formSteps[1].classList.add('form__step--active');
+  showCurrentForm();
 };
