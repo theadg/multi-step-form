@@ -401,7 +401,7 @@
   }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 800px) {
   body {
     height: 100vh;
     width: 100vw;
@@ -409,22 +409,23 @@
     background-color: $color-neutral-alabaster;
   }
   .container {
-    width: 940px;
+    width: min(80vw, 940px);
     height: 600px;
     display: flex;
 
     background-color: white;
     border-radius: 8px;
     padding: 16px;
+
     &__image {
-      min-width: 275px;
+      min-width: min(275px, 40%);
       height: 570px;
       background-image: url('../assets/bg-sidebar-desktop.svg');
       border-radius: 8px;
     }
 
     &__content {
-      padding: 0 40px;
+      width: max(100%, 30vw);
     }
   }
 
