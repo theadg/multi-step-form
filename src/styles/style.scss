@@ -83,13 +83,10 @@
   }
 
   &__container {
-    // min-height: 500px;
     height: fit-content;
     width: 90%;
     background-color: white;
 
-    // TODO: fix  box shadow
-    // temp box shadow
     box-shadow: -11px 27px 61px -18px rgba(255, 248, 248, 0.56);
     -webkit-box-shadow: -11px 27px 61px -18px rgba(0, 0, 0, 0.56);
     -moz-box-shadow: -11px 27px 61px -18px rgba(0, 0, 0, 0.56);
@@ -130,6 +127,15 @@
 
       &:hover {
         @include hoverCursor();
+        color: $color-primary-blue-marine;
+      }
+    }
+
+    &--confirm {
+      background-color: $color-primary-blue-purple;
+
+      &:hover {
+        opacity: 0.7;
       }
     }
   }
@@ -173,8 +179,24 @@
       gap: 6px;
     }
 
+    &:focus {
+      border-color: $color-primary-blue-marine;
+    }
+
+    &--errorBorder {
+      border-color: $color-primary-red-strawberry;
+    }
     &--label {
       color: $color-primary-blue-marine;
+    }
+
+    &--error {
+      color: $color-primary-red-strawberry;
+    }
+
+    &--header {
+      display: flex;
+      justify-content: space-between;
     }
   }
 }
@@ -531,5 +553,7 @@
   }
 }
 
-// TODO: create readme
-// TODO: update linkedin
+// TODO: fix responsiveness
+
+// TODO: create readme - 10 mins
+// TODO: update linkedin - 10 mins
