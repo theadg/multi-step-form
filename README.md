@@ -31,12 +31,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./src/assets/multi-step-form.png.jpg)
+![](./src/assets/multi-step-form.png)
 
 ### Links
 
 - Solution URL: [https://github.com/theadg/multi-step-form]
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://theadg.github.io/multi-step-form/]
 
 ## My process
 
