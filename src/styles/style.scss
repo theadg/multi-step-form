@@ -6,9 +6,12 @@
   justify-content: center;
 }
 
+@mixin hoverCursor() {
+  cursor: pointer;
+}
 @mixin hoverEffect() {
   border-color: $color-primary-blue-purple;
-  cursor: pointer;
+  @include hoverCursor();
 }
 * {
   margin: 0;
@@ -117,9 +120,17 @@
     padding: 12px;
     border-radius: 6px;
 
+    &:hover {
+      @include hoverCursor();
+    }
+
     &--back {
       margin-right: auto;
       color: $color-neutral-gray-cool;
+
+      &:hover {
+        @include hoverCursor();
+      }
     }
   }
 
