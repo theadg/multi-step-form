@@ -1,6 +1,29 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/components/formIcons.js":
+/*!*************************************!*\
+  !*** ./src/components/formIcons.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _assets_icon_arcade_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/icon-arcade.svg */ "./src/assets/icon-arcade.svg");
+/* harmony import */ var _assets_icon_advanced_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/icon-advanced.svg */ "./src/assets/icon-advanced.svg");
+/* harmony import */ var _assets_icon_pro_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/icon-pro.svg */ "./src/assets/icon-pro.svg");
+/* harmony import */ var _assets_icon_thank_you_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/icon-thank-you.svg */ "./src/assets/icon-thank-you.svg");
+
+
+
+
+document.querySelector('#arcadeImg').src = _assets_icon_arcade_svg__WEBPACK_IMPORTED_MODULE_0__;
+document.querySelector('#advancedImg').src = _assets_icon_advanced_svg__WEBPACK_IMPORTED_MODULE_1__;
+document.querySelector('#proImg').src = _assets_icon_pro_svg__WEBPACK_IMPORTED_MODULE_2__;
+document.querySelector('#thanksImg').src = _assets_icon_thank_you_svg__WEBPACK_IMPORTED_MODULE_3__;
+
+/***/ }),
+
 /***/ "./src/components/formInteraction.js":
 /*!*******************************************!*\
   !*** ./src/components/formInteraction.js ***!
@@ -924,6 +947,50 @@ module.exports = __webpack_require__.p + "bg-sidebar-desktop.svg";
 "use strict";
 module.exports = __webpack_require__.p + "bg-sidebar-mobile.svg";
 
+/***/ }),
+
+/***/ "./src/assets/icon-advanced.svg":
+/*!**************************************!*\
+  !*** ./src/assets/icon-advanced.svg ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "icon-advanced.svg";
+
+/***/ }),
+
+/***/ "./src/assets/icon-arcade.svg":
+/*!************************************!*\
+  !*** ./src/assets/icon-arcade.svg ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "icon-arcade.svg";
+
+/***/ }),
+
+/***/ "./src/assets/icon-pro.svg":
+/*!*********************************!*\
+  !*** ./src/assets/icon-pro.svg ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "icon-pro.svg";
+
+/***/ }),
+
+/***/ "./src/assets/icon-thank-you.svg":
+/*!***************************************!*\
+  !*** ./src/assets/icon-thank-you.svg ***!
+  \***************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "icon-thank-you.svg";
+
 /***/ })
 
 /******/ 	});
@@ -1073,12 +1140,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_formNav__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_formNav__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_formInteraction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/formInteraction */ "./src/components/formInteraction.js");
 /* harmony import */ var _components_formInteraction__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_formInteraction__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_formIcons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/formIcons */ "./src/components/formIcons.js");
 
 
 
 
-// TODO: Tidy up interactions
-// TODO: Add change button functionality
 })();
 
 /******/ })()
