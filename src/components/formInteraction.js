@@ -63,8 +63,6 @@ const getCurrentPlan = () => {
 };
 
 const setTotalText = () => {
-  console.log('SET TOTAL TEXT: ', total);
-  console.log(resultTotal);
   resultTotal.textContent = `+$${total}/${resultPrice.textContent.substring(
     resultPrice.textContent.length - 2
   )}`;
@@ -128,7 +126,6 @@ const createCheckoutRow = (title, price) => {
   resultContainer.append(resultTextContainer);
   resultContainer.append(resultPrice);
 
-  console.log('CREATED!!!');
   return resultContainer;
 };
 
@@ -146,7 +143,6 @@ const removeResultRow = (title) => {
 const setActiveAddOns = () => {
   getPlanPrice();
   addOns.forEach((element) => {
-    // console.log(element.firstElementChild);
     const checkbox = element.firstElementChild;
     const price = element.lastElementChild.textContent;
     const title = element.children[1].firstElementChild.textContent;
@@ -165,9 +161,6 @@ const setActiveAddOns = () => {
             total -= parseInt(price.substring(3, 3), 10);
             break;
         }
-        console.log('ELEMENT PRICE', price);
-        console.log('SUB', total);
-        // setTotalText();
       } else {
         element.classList.add('addon__container--active');
         mainResultContainer.append(createCheckoutRow(title, price));
@@ -180,9 +173,6 @@ const setActiveAddOns = () => {
             total += parseInt(price.substring(3, 3), 10);
             break;
         }
-
-        console.log('ADD', total);
-        console.log(price);
       }
 
       setTotalText();
@@ -200,7 +190,6 @@ const setActiveAddOns = () => {
           break;
       }
 
-      console.log('TOTAL IN CHECKED', total);
       setTotalText();
     }
   });
@@ -230,7 +219,6 @@ plans.forEach((element) => {
     element.classList.add('plan__container--active');
     currentPlanType = element.lastElementChild.firstElementChild.textContent;
     const currentPlanPrice = element.lastElementChild.children[1].textContent;
-    console.log(currentPlanPrice);
     resultPlan.textContent = `${currentPlanType} (${currentPlan})`;
     resultPrice.textContent = `${currentPlanPrice}`;
 
