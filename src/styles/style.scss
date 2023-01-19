@@ -137,6 +137,7 @@
   &__text {
     &--title {
       color: $color-primary-blue-marine;
+      font-size: 26px;
     }
 
     &--subtitle {
@@ -378,9 +379,7 @@
   }
 }
 
-@media screen and (min-width: 1080px) {
-  // container size 940 * 600
-
+@media screen and (min-width: 500px) {
   body {
     height: 100vh;
     width: 100vw;
@@ -393,7 +392,6 @@
     display: flex;
 
     background-color: white;
-    // border: 1px solid red;
     border-radius: 8px;
     padding: 16px;
     &__image {
@@ -414,7 +412,7 @@
       width: 35px;
       &--container {
         flex-direction: column;
-        // TODO: add sub steps
+        padding-left: 30px;
         gap: 32px;
 
         &--row {
@@ -426,6 +424,7 @@
         display: grid;
         grid-auto-flow: column;
         grid-template-columns: 0.5fr 0.25fr;
+        padding-top: 20px;
       }
 
       &--row {
@@ -433,6 +432,7 @@
       }
       &--title {
         color: $color-neutral-gray-light;
+        font-size: 12 px;
       }
 
       &--desc {
@@ -443,6 +443,7 @@
 
     &__container {
       box-shadow: none;
+      height: 100% !important;
     }
 
     &__body {
@@ -455,9 +456,7 @@
       padding: 0 50px;
     }
   }
-  // image 275*570
 
-  // 160*140
   .plan {
     &__container {
       height: 160px;
@@ -505,8 +504,19 @@
       }
     }
   }
+
+  .form {
+    &__final {
+      height: 100%;
+    }
+  }
+  .final {
+    &__icon {
+      height: 80px;
+      width: 80px;
+    }
+  }
 }
 
-// TODO: complete desktop interactions
-
-// TODO: Add micro-interactions (hover etc);
+// TODO: create readme
+// TODO: update linkedin
